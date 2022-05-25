@@ -162,15 +162,15 @@
     "\n",
     "This is another interesting and useful result. If we can measure the shear field in a region on a grid, take its Fourier transform using FFT and use the above equation, one can get the convergence field (surface density field). The corresponding result in real space is (Kaiser & Squires, 1993)\n",
     "\\begin{eqnarray}\n",
-    "\\kappa = \\frac{1}{\\pi}\\int d\\vec\\theta' {\\cal D}(\\vec\\theta-\\vec\\theta').{\\boldsymbol\\gamma}(\\vec\\theta')\n",
+    "\\kappa = \\frac{1}{\\pi}\\int d\\vec\\theta' {\\cal D}_{\\gamma\\rightarrow\\kappa}(\\vec\\theta-\\vec\\theta').{\\boldsymbol\\gamma}(\\vec\\theta')\n",
     "\\end{eqnarray}\n",
     "where \n",
     "\\begin{eqnarray}\n",
-    "{\\cal D}(\\vec\\theta) = \\frac{1}{|\\vec\\theta|^4}[\\theta_2^2-\\theta_1^2, -2\\theta_1\\theta_2]\n",
+    "{\\cal D}_{\\gamma\\rightarrow\\kappa}(\\vec\\theta) = \\frac{1}{|\\vec\\theta|^4}[\\theta_2^2-\\theta_1^2, 2\\theta_1\\theta_2]\n",
     "\\end{eqnarray}\n",
     "Because $[\\theta_1^2-\\theta_2^2)^2 + (2\\theta_1\\theta_2)^2]=|\\vec\\theta|^2$, we can write this as\n",
     "\\begin{eqnarray}\n",
-    "{\\cal D}(\\vec\\theta) = \\frac{1}{|\\vec\\theta|^2}[\\cos 2 \\varphi, \\sin 2\\varphi]\n",
+    "{\\cal D}_{\\gamma\\rightarrow\\kappa}(\\vec\\theta) = \\frac{1}{|\\vec\\theta|^2}[\\cos 2 \\varphi, \\sin 2\\varphi]\n",
     "\\end{eqnarray}\n",
     "This kernel is similar to the ellipticity pattern induced by a point mass around its position. Thus there is an intuitive way to understand this equation in real space. It is a sort of a match filter, the value of $\\kappa$ will be large when the pattern matches the pattern induced by a point mass."
    ]
@@ -189,11 +189,11 @@
     "\\end{eqnarray}\n",
     "Using the definitions of the shear components we get\n",
     "\\begin{eqnarray}\n",
-    "{\\boldsymbol \\gamma} = \\frac{1}{\\pi}\\int d\\vec\\theta' {\\cal D}(\\theta'-\\theta') \\kappa(\\theta')\n",
+    "{\\boldsymbol \\gamma} = \\frac{1}{\\pi}\\int d\\vec\\theta' {\\cal D}_{\\kappa\\rightarrow\\gamma}(\\vec\\theta-\\vec\\theta') \\kappa(\\vec\\theta')\n",
     "\\end{eqnarray}\n",
     "where \n",
     "\\begin{eqnarray}\n",
-    "{\\cal D}(\\theta) = \\frac{\\theta_2^2 - \\theta_1^2-2i\\theta_1\\theta_2}{|\\vec \\theta|^4}\n",
+    "{\\cal D}_{\\kappa\\rightarrow\\gamma}(\\vec\\theta) = \\frac{\\theta_2^2 - \\theta_1^2-2i\\theta_1\\theta_2}{|\\vec \\theta|^4}\n",
     "\\end{eqnarray}"
    ]
   },
@@ -211,7 +211,7 @@
     "\\end{eqnarray}\n",
     "where we have included a weight $q(I)$. The second moments of the brightness distribution are given by\n",
     "\\begin{eqnarray}\n",
-    "Q_{i, j} = \\frac{\\int d\\vec\\theta\\,I(\\vec \\theta)\\,q(I)\\,(\\theta_i-\\theta_{\\rm cen, i})(\\theta_j-\\theta_{\\rm cen, j})}{\\int d\\vec\\theta\\,I(\\vec\\theta)\\,q(I) }\n",
+    "Q_{ij} = \\frac{\\int d\\vec\\theta\\,I(\\vec \\theta)\\,q(I)\\,(\\theta_i-\\theta_{\\rm cen, i})(\\theta_j-\\theta_{\\rm cen, j})}{\\int d\\vec\\theta\\,I(\\vec\\theta)\\,q(I) }\n",
     "\\end{eqnarray}\n",
     "\n",
     "One can define two different types of ellipticities with this definition\n",
@@ -241,7 +241,7 @@
     "\\begin{eqnarray}\n",
     "\\chi^{\\rm s} &=& \\frac{\\chi-2g+g^2\\chi^*}{1+|g|^2-2{\\rm Re}(g\\chi^*)}\\\\\n",
     "\\epsilon^{\\rm s} &=& \\frac{\\epsilon-g}{1-g^*\\epsilon} {\\,\\,\\,\\rm if\\,\\,|g|\\le 1}\\\\\n",
-    "\\epsilon^{\\rm s} &=& \\frac{1-g\\epsilon^*}{\\epsilon^*-g^*\\epsilon} {\\,\\,\\,\\rm if\\,\\,|g|\\gt 1}\\\\\n",
+    "\\epsilon^{\\rm s} &=& \\frac{1-g\\epsilon^*}{\\epsilon^*-g^*} {\\,\\,\\,\\rm if\\,\\,|g|\\gt 1}\\\\\n",
     "\\end{eqnarray}\n",
     "If the source galaxies are randomly oriented with respect to each other the ensemble average $\\langle\\chi^{\\rm s}\\rangle=\\langle\\epsilon^{\\rm s}\\rangle = 0$, which allows us to determine the value of g by performing an ensemble average of the measured ellipticities.\n",
     "\\begin{eqnarray}\n",
@@ -286,6 +286,24 @@
     "\\end{eqnarray}\n",
     "where $P$ represents the PSF and is normalized to unity and is centered at zero. A delta-function image gets converted into the same shape as PSF. In general the PSF smears the image of an object. An isotropic PSF will reduce the ellipticity by smoothing out the image, especially for small objects whose size is comparable to the PSF. In addition, any anisotropy of the PSF will leak into the measured ellipticity.\n",
     "\n",
+    "#### Ideal weighting\n",
+    "\n",
+    "If the weights used for the determination of ellipticity of galaxies are $q(I)=I$, in that case there is a straightforward relation between the PSF ellipticity, the image ellipticity and the observed ellipticity on the detector after the PSF convolution,\n",
+    "\n",
+    "\\begin{eqnarray}\n",
+    "\\chi^{\\rm obs} = \\frac{\\chi+T\\chi^{\\rm PSF}}{1+T}\n",
+    "\\end{eqnarray}\n",
+    "where\n",
+    "\\begin{eqnarray}\n",
+    "T&=&\\frac{P_{11}+P_{22}}{Q_{11}+Q_{22}}\\\\\n",
+    "\\chi^{\\rm PSF} &=& \\frac{P_{11}-P_{22}+2iP_{12}}{P_{11}+P_{22}}\n",
+    "\\end{eqnarray}\n",
+    "T represents the ratio of the PSF size to the galaxy size before convolution. If T is small the galaxy is well resolved (the PSF is much smaller than the galaxy), then the correction factor is small. However for getting more and more galaxies to perform the average, we need to use smaller galaxies and so we run into galaxies with sizes comparable to the PSF size.\n",
+    "\n",
+    "In reality however we use weight functions which are not the same as the ideal one above, and so the relation between how the PSF changes the ellipticity needs to be calibrated using realistic image simulations.\n",
+    "\n",
+    "#### Dealing with anisotropic PSF \n",
+    "\n",
     "The total PSF can be decomposed into an isotropic and an anisotropic part:\n",
     "\n",
     "\\begin{eqnarray}\n",
@@ -322,7 +340,7 @@
     "This allows one to fit for the shape moments of a galaxy $M$ (3 independent numbers), in addition to the amplitude A and the position coordinates $\\vec\\theta_0$ (2 more numbers). One can show that the shapes which minimize the above $\\chi^2$ are weighted moments with\n",
     "\\begin{eqnarray}\n",
     "\\theta_0 &=& \\frac{\\int d\\vec\\theta I(\\vec\\theta) w(\\vec\\theta) \\theta}{\\int d\\vec\\theta I(\\vec\\theta) w(\\vec\\theta)} \\\\\n",
-    "M_{ij} &=& \\frac{\\int d\\vec\\theta I(\\vec\\theta) w(\\vec\\theta) (\\theta_i-\\theta_{0, i})(\\theta_j-\\theta_{0, j})}{\\int d\\vec\\theta I(\\vec\\theta) w(\\vec\\theta)}\n",
+    "M_{ij} &=& 2\\frac{\\int d\\vec\\theta I(\\vec\\theta) w(\\vec\\theta) (\\theta_i-\\theta_{0, i})(\\theta_j-\\theta_{0, j})}{\\int d\\vec\\theta I(\\vec\\theta) w(\\vec\\theta)}\n",
     "\\end{eqnarray}\n",
     "\n",
     "Bernstein and Jarvis 2002 also present an estimator for the distortion $\\delta$ for shapes measured using such adaptive moments when considering an ensemble of sources. They consider how the distribution of the ellipticities transform under the application of a distortion to a random distribution and how to use this change to estimate the distortion. They compute the optimal weights in the case of general distribution $P(e)$, but for a Gaussian distribution for $P(e)$ and in the case of small measurement noise, these weights are approximately given by\n",
@@ -340,7 +358,7 @@
     "\\end{eqnarray}\n",
     "Thus the shear estimate is given by\n",
     "\\begin{eqnarray}\n",
-    "\\gamma &=& \\frac{1}{{\\cal R}}\\frac{\\sum w_i e_i}{\\sum w_i}\n",
+    "2\\gamma &=& \\delta &=& \\frac{1}{{\\cal R}}\\frac{\\sum w_i e_i}{\\sum w_i}\n",
     "\\end{eqnarray}\n",
     "\n",
     "\n",
@@ -381,19 +399,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 64,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/latex": [
-       "$\\displaystyle \\frac{- \\sin{\\left(\\delta_{1} \\right)} \\cos{\\left(\\delta_{2} \\right)} + \\sin{\\left(\\delta_{2} \\right)} \\cos{\\left(\\delta_{1} \\right)} \\cos{\\left(\\alpha_{1} - \\alpha_{2} \\right)}}{\\sin{\\left(\\theta \\right)}}$"
+       "$\\displaystyle \\frac{- \\sin{\\left(\\delta_{1} \\right)} \\cos{\\left(\\delta_{2} \\right)} + \\sin{\\left(\\delta_{2} \\right)} \\cos{\\left(\\delta_{1} \\right)} \\cos{\\left(\\alpha_{1} - \\alpha_{2} \\right)}}{\\left|{\\sin{\\left(\\theta \\right)}}\\right|}$"
       ],
       "text/plain": [
-       "(-sin(delta1)*cos(delta2) + sin(delta2)*cos(delta1)*cos(alpha1 - alpha2))/sin(theta)"
+       "(-sin(delta1)*cos(delta2) + sin(delta2)*cos(delta1)*cos(alpha1 - alpha2))/Abs(sin(theta))"
       ]
      },
-     "execution_count": 35,
+     "execution_count": 64,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -410,7 +428,7 @@
     "nNP = s.Matrix([0, 0, 1])\n",
     "\n",
     "# G1 \\cross G2/sin(theta)\n",
-    "L_G1G2=nG1.cross(nG2)/s.sin(theta)\n",
+    "L_G1G2=nG1.cross(nG2)/s.Abs(s.sin(theta))\n",
     "\n",
     "# G2 \\cross NP/cos(delta2)\n",
     "L_GC = nG2.cross(nNP)/s.cos(delta2)\n",
@@ -477,8 +495,8 @@
    "source": [
     "The above calculations show that\n",
     "\\begin{eqnarray}\n",
-    "\\cos\\beta_2 &=& \\sin\\phi_2 = \\frac{-\\sin\\delta_1\\cos\\delta_2+\\sin\\delta_2\\cos\\delta_1\\cos(\\alpha_2-\\alpha_1)}{\\sin\\theta}\\\\\n",
-    "\\sin\\beta_2 &=& \\cos\\phi_2 = \\frac{ \\sin(\\alpha_2-\\alpha_1)\\cos\\delta_1}{\\sin\\theta}\n",
+    "\\cos\\beta_2 &=& \\sin\\phi_2 = \\frac{-\\sin\\delta_1\\cos\\delta_2+\\sin\\delta_2\\cos\\delta_1\\cos(\\alpha_2-\\alpha_1)}{|\\sin\\theta|}\\\\\n",
+    "\\sin\\beta_2 &=& \\cos\\phi_2 = \\frac{ \\sin(\\alpha_2-\\alpha_1)\\cos\\delta_1}{|\\sin\\theta|}\n",
     "\\end{eqnarray}"
    ]
   },
@@ -538,16 +556,23 @@
    "metadata": {},
    "source": [
     "\\begin{eqnarray}\n",
-    "\\gamma' &=& \\gamma e^{2i\\theta}\\\\\n",
-    "\\gamma'_1 + i \\gamma'_2 &=& (\\gamma_1 + i \\gamma_2) (\\cos2\\theta + i\\sin2\\theta)\\\\\n",
-    "\\gamma'_1 &=& \\gamma_1 \\cos2\\theta - \\gamma_2 \\sin 2\\theta \\\\\n",
-    "&=& |\\gamma|(\\cos2\\phi \\cos2\\theta - \\sin2 \\phi \\sin 2\\theta )\\\\\n",
-    "&=& |\\gamma| \\cos(2(\\phi+\\theta)) \\\\\n",
-    "\\gamma'_2 &=& \\gamma_1 \\sin2\\theta + \\gamma_2 \\cos 2\\theta \\\\\n",
-    "&=& |\\gamma|(\\cos2\\phi \\sin2\\theta + \\sin2 \\phi \\cos 2\\theta )\\\\\n",
-    "&=& |\\gamma| \\sin(2(\\phi+\\theta))\n",
+    "\\gamma' &=& \\gamma e^{-2i\\theta}\\\\\n",
+    "\\gamma'_1 + i \\gamma'_2 &=& (\\gamma_1 + i \\gamma_2) (\\cos2\\theta - i\\sin2\\theta)\\\\\n",
+    "\\gamma'_1 &=& \\gamma_1 \\cos2\\theta + \\gamma_2 \\sin 2\\theta \\\\\n",
+    "&=& |\\gamma|(\\cos2\\phi \\cos2\\theta + \\sin2 \\phi \\sin 2\\theta )\\\\\n",
+    "&=& |\\gamma| \\cos(2(\\phi-\\theta)) \\\\\n",
+    "\\gamma'_2 &=& -\\gamma_1 \\sin2\\theta + \\gamma_2 \\cos 2\\theta \\\\\n",
+    "&=& |\\gamma|(-\\cos2\\phi \\sin2\\theta + \\sin2 \\phi \\cos 2\\theta )\\\\\n",
+    "&=& |\\gamma| \\sin(2(\\phi-\\theta))\n",
     "\\end{eqnarray}"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
