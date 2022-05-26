@@ -10,6 +10,7 @@ Welcome to Lecture series on weak gravitational lensing's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   Preface
    Gravitational_lensing_basics
    Weak_gravitational_lensing
 .. From_images_to_shapes

@@ -37,6 +37,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gravitational_lensing_basics.html">Introduction to Gravitational lensing</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Weak gravitational lensing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Weak-lensing-as-mass-probe">Weak lensing as mass probe</a></li>
@@ -53,9 +54,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Adaptive-moments-for-shapes">Adaptive moments for shapes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#PSF-correction-using-re-Gaussianization">PSF correction using re-Gaussianization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#PSF-corrections">PSF corrections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Tangential-shear-computation">Tangential shear computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Delta-Sigma-instead-of-shear">Delta Sigma instead of shear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Measurement-of-the-weak-lensing-signal">Measurement of the weak lensing signal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Weak-lensing-magnification">Weak lensing magnification</a></li>
 </ul>
 </li>
@@ -561,8 +562,15 @@ w \approx \frac{1}{{e_{\rm rms}^2+\sigma_{\rm meas}^2}}
 2\gamma &=& \delta &=& \frac{1}{{\cal R}}\frac{\sum w_i e_i}{\sum w_i}
 \end{eqnarray}</span></p>
 </div>
-<div class="section" id="PSF-correction-using-re-Gaussianization">
-<h2>PSF correction using re-Gaussianization<a class="headerlink" href="#PSF-correction-using-re-Gaussianization" title="Permalink to this headline"></a></h2>
+<div class="section" id="PSF-corrections">
+<h2>PSF corrections<a class="headerlink" href="#PSF-corrections" title="Permalink to this headline"></a></h2>
+<p>PSF convolution is straightforward when the weighting used to determine the moments are ideal, however as mentioned before such methods have to deal with problems of noise which enter the ellipticity in a non-linear manner. There are several ways proposed to deal with PSF corrections when weighted moments are used for ellipticity determination.</p>
+<p>One can potentially measure the dilution of PSF using detailed image simulation, however the correction factors can be dependent upon how realistic the simulations are in terms of their unlensed galaxy properties. Perturbative methods like KSB described above have their own limitations when applied to realistic PSFs (Bernstein &amp; Jarvis 2002). Another approach is to deconvolve the PSF by using stacks of galaxies in similar locations (Kuijken 1999). However this requires the galaxies to be
+similarly sheared and a large number of background galaxies in a region where the PSF does not vary substantially. Bernstein &amp; Jarvis (2002) suggest the use Laguerre exponential functions as basis functions to decompose the image and PSFs into. Such expansions have convenient properties in order apply shears or for convolutions and thus can be used to correct for the effects of the PSF. However, these do require some truncation in the basis fucntion expansion. For this Bernstein &amp; Jarvis (2002)
+suggest applying a rounding kernel to the PSF first and give an expression to correct for the PSF designed to be accurate in the case of Gaussian PSF and Gaussian objects and which works for well resolved galaxies.</p>
+<p>Hirata and Seljak (2003) expand on this and suggest that non-Gaussian PSFs can be dealt with in the following manner:</p>
+<p>Consider a PSF <span class="math notranslate nohighlight">\(g(\vec{x})\)</span> and approximate it with a Gaussian <span class="math notranslate nohighlight">\(G(\vec x)\)</span>, and consider the residual function <span class="math notranslate nohighlight">\(\epsilon(\vec x) = g-G\)</span>. Let <span class="math notranslate nohighlight">\(I^{\rm pre}(x)\)</span> be the original pre-seeing image, then the image <span class="math notranslate nohighlight">\(I^{\rm post}(x) = g\otimes I^{\rm pre}(x) = G \otimes I^{\rm pre}(x) + \epsilon\otimes I^{\rm pre}(x)\)</span>. Thus one can determine <span class="math notranslate nohighlight">\(G \otimes I^{\rm pre}(x) = I^{\rm post}(x) - \epsilon\otimes I^{\rm pre}(x)\)</span>. We do not really know what is
+<span class="math notranslate nohighlight">\(I^{\rm pre}(x)\)</span> but since this is convolved with a smaller function <span class="math notranslate nohighlight">\(\epsilon\)</span> we can use an approximate function <span class="math notranslate nohighlight">\(\tilde I^{\rm pre}\)</span> which is a deconvolved image assuming the PSF and the original image to be Gaussians. The Bernstein and Jarvis 2002 can now be made even more accurate. This technique called re-Gaussianization is used to then perform the PSF correction.</p>
 </div>
 <div class="section" id="Tangential-shear-computation">
 <h2>Tangential shear computation<a class="headerlink" href="#Tangential-shear-computation" title="Permalink to this headline"></a></h2>
@@ -658,9 +666,25 @@ e_{\rm tan} &=& - {\rm Re}\left[(e_1 + i e_2)e^{-i2\phi_2}\right]\\
 \langle e_{\rm tan}\rangle = \frac{\sum w_i e_{\rm tan, i}}{w_i}
 \end{eqnarray}</span> which can then be related to the tangential shear depending upon the definition of ellipticity used.</p>
 </div>
-<div class="section" id="Delta-Sigma-instead-of-shear">
-<h2>Delta Sigma instead of shear<a class="headerlink" href="#Delta-Sigma-instead-of-shear" title="Permalink to this headline"></a></h2>
-<p>The physical quantity of interest is <span class="math notranslate nohighlight">\(\Delta\Sigma\)</span> instead of the shear. If there is a sample of galaxies</p>
+<div class="section" id="Measurement-of-the-weak-lensing-signal">
+<h2>Measurement of the weak lensing signal<a class="headerlink" href="#Measurement-of-the-weak-lensing-signal" title="Permalink to this headline"></a></h2>
+<p>The weak lensing signal can be measured from an ensemble average of ellipticities. <span class="math">\begin{eqnarray}
+\langle \gamma_{\rm t} (\theta) \rangle &=& \bar\kappa(<\theta) - \langle\kappa\rangle(\theta)\\
+&=& \frac{\bar\Sigma(<\theta)-\langle\Sigma\rangle(\theta)}{\Sigma_{\rm crit}} \\
+&=& \frac{\Delta \Sigma}{\Sigma_{\rm crit}}\\
+&=& \frac{1}{2{\cal R}}\frac{\sum w_i e_{\rm tan}}{\sum w_i}
+\end{eqnarray}</span> In the last line we have assumed that the ellipticity measure used gives an estimate of distortion. The fact that the background source galaxies are not circular results in a statistical noise in the measurement of the average tangential shear from the shape of galaxies. This noise can be beaten down by averaging over a large number of source galaxies. A single object may not have enough number of source galaxies to beat down the shape noise. In that case, we can average over a
+large number of lensing objects. The source galaxies that we consider may also not lie at the same redshift, and so each source galaxy will have a different critical surface density. In this case, it is better to devise an estimator for <span class="math notranslate nohighlight">\(\Delta\Sigma\)</span> instead of <span class="math notranslate nohighlight">\(\gamma_{\rm t}\)</span>. An individual galaxy gives an estimate of <span class="math notranslate nohighlight">\(\gamma_{\rm t}\Sigma_{\rm crit}/(2{\cal R})\)</span>. The error on this individual estimate is <span class="math notranslate nohighlight">\([e_{\rm rms}^2+e_{\rm meas}^2]^{1/2}\Sigma_{\rm crit}\)</span>. The
+estimator <span class="math">\begin{eqnarray}
+\tilde{\Delta\Sigma}\left[R_{\rm p}=D_{\rm d}\theta\right] = \frac{\sum w_{ls} \left(e_{\rm tan} \Sigma_{\rm crit}\right)}{(2{\cal R})\sum w_{\rm ls}}
+\end{eqnarray}</span> would then result in a minimum variance estimate if <span class="math">\begin{eqnarray}
+w_{\rm ls} = \frac{1}{\Sigma_{\rm crit}^2(e_{\rm rms}^2+e_{\rm meas}^2)}
+\end{eqnarray}</span></p>
+<p>Also it is common to measure the signal as a function of projected radius from the center of the lensing object. In this case one has to use the critical surface density also in comoving units. <span class="math">\begin{eqnarray}
+\Sigma_{\rm crit}^{\rm com} = \frac{1}{(1+z_{\rm d})^2}\frac{c^2}{4\pi G}\frac{D_{\rm s}}{D_{\rm d} D_{\rm ds}}
+\end{eqnarray}</span> The distances here are angular diameter distances, because they were used in order to convert physical distances into angles (<span class="math notranslate nohighlight">\(D_{\rm s}, D_{\rm ds}\)</span> to convert deflection angle to scaled deflection angle, and <span class="math notranslate nohighlight">\(D_{\rm d}\)</span> to convert <span class="math notranslate nohighlight">\(\theta\)</span> to the physical impact parameter). Thus we will use <span class="math">\begin{eqnarray}
+\tilde{\Delta\Sigma}^{\rm com}\left[R_{\rm p}=(1+z_{\rm d})D_{\rm d}\theta\right] &=& \frac{\sum w_{ls} \left(e_{\rm tan} \Sigma^{\rm com}_{\rm crit}\right)}{(2{\cal R})\sum w_{\rm ls}}\\
+\end{eqnarray}</span></p>
 </div>
 <div class="section" id="Weak-lensing-magnification">
 <h2>Weak lensing magnification<a class="headerlink" href="#Weak-lensing-magnification" title="Permalink to this headline"></a></h2>
