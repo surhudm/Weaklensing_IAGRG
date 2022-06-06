@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to Cosmology &mdash; Cosmology IUCAA 2022 0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cosmological principle" href="Cosmological_principle.html" />
+    <link rel="prev" title="Preface" href="Preface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Cosmology IUCAA 2022
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Cosmology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Early-attempts-at-Cosmology">Early attempts at Cosmology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Cosmological-observations">Cosmological observations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Hubble’s-discovery-of-the-expansion-of-the-Universe">Hubble’s discovery of the expansion of the Universe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Cosmological_principle.html">Cosmological principle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FRW_models.html">Friedmann Robertson Walker models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Early_Universe.html">The early Universe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inhomogeneous_Universe.html">The inhomogeneous Universe</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cosmology IUCAA 2022</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Introduction to Cosmology</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Introduction.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">YouTubeVideo</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">600</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Introduction-to-Cosmology">
+<h1>Introduction to Cosmology<a class="headerlink" href="#Introduction-to-Cosmology" title="Permalink to this headline"></a></h1>
+<p>Cosmology is the study of the Universe as a whole, its origin, its history and its future. Humans have long wanted to know answers to questions such as</p>
+<ul class="simple">
+<li><p>How old is mankind?</p></li>
+<li><p>What are we made up of?</p></li>
+<li><p>How did we come into existence?</p></li>
+<li><p>What is the fate of mankind?</p></li>
+</ul>
+<p>A number of philosophers and religions have attempted to address these questions. Over time we have learnt to express these questions in a more scientific manner. The focus has now shifted from human beings to the Universe and so the questions have changed a bit, but have grown in their scope.</p>
+<p>In cosmology, we try to answer questions such as</p>
+<ul class="simple">
+<li><p>How old is the Universe?</p></li>
+<li><p>What is it made up of?</p></li>
+<li><p>How did the Universe come into existence?</p></li>
+<li><p>What is the long term fate of the Universe?</p></li>
+</ul>
+<p>We can now attempt to answer each of these questions scientifically. Progress is often tedious, but the most important thing that has changed over the past century is the availability of observational data.</p>
+<div class="section" id="Early-attempts-at-Cosmology">
+<h2>Early attempts at Cosmology<a class="headerlink" href="#Early-attempts-at-Cosmology" title="Permalink to this headline"></a></h2>
+<p>The initial cosmological theories talked about the Sun, Moon and stars, the relationships of these heavenly bodies to one another. These are the simplest observations that you can make. Every night you see the stars and the planets move in the sky as time passes, in the same way that the Sun moves around in the sky during day time. The simplest model that comes to mind is that of the Earth at the centre of the Universe with the Sun, the Moon, stars and planets moving around on celestial circles
+(geocentric model). However as one makes more and more meticulous observations, a number of new patterns emerge. The planets move within the fixed pattern of stars, the location of stars at the same time is slightly different every night.</p>
+<p>Explaining these ever increasing complex patterns becomes more and more difficult until you realize that the explanation of the patterns simplify greatly if you consider the Sun to be at the centre with all the planets including the Earth going around the Sun (heliocentric model). These realizations and progress did not happen instantaneously and often involved scientists who were running against prevalent beliefs.</p>
+<p>As observational technology has improved, our knowledge of the Universe extended to stars in our own Milky way. Herschel was one of the firsts to map out the stars and understand the structure of the Milky way. In those days the Sun was kept at the centre of the galaxy, but further observations in the form of distance to these stars indicated that this is also not the case.</p>
+<p>With bigger and better telescopes, astronomers were able to identify nebulous objects in the sky. There was a big and intense debate in the early decades of the 20th century whether such nebulae lie wihtin the the galaxy or beyond. This debate was settled in the early 1920s with the observations of variable stars in the outskirts of these nebulae which put their distances even beyond the farthest extents of our galaxy. It was realized that these nebulae, now known as galaxies, formed separate
+islands of stars.</p>
+<p>Cosmology today has the ambitous goal of understanding this extragalactic Universe composed of billions of galaxies many of which are millions to billions of light years away. Understanding their dynamical behaviour as a whole, their large scale structure, their birth and evolution, forms an integral part of cosmology today.</p>
+</div>
+<div class="section" id="Cosmological-observations">
+<h2>Cosmological observations<a class="headerlink" href="#Cosmological-observations" title="Permalink to this headline"></a></h2>
+<p>There are many similarities to some of this history in the current development of cosmology. Cosmology today is heavily driven and shaped by observations. As newer and newer observations are made, theories have to be supplemented with extra parameters (some more justified than the other). Theories in turn make predictions which can then be further tested with observations.</p>
+<div class="section" id="Hubble’s-discovery-of-the-expansion-of-the-Universe">
+<h3>Hubble’s discovery of the expansion of the Universe<a class="headerlink" href="#Hubble’s-discovery-of-the-expansion-of-the-Universe" title="Permalink to this headline"></a></h3>
+<p>One of the most important observations in the 1920s that made a significant advance in our understanding of the Universe was made by Hubble and independently by Slipher. In addition to the discovery of extragalactic nebulae based on distances, Hubble measured the radial velocities of these galaxies using spectroscopic observations. He found out that the galaxies are receding away from us with velocities that are proportional to the physical distances to these galaxies. These velocities were
+measured with redshifts of known emission and absorption lines. This observation profoundly changed our world view. Until then, the Universe was considered to be static. All cosmologists, including Einstein were attempting to build a static model for the Universe. This shows how important observations are to inform theoretical models.</p>
+<p>Today cosmology is driven by a variety of observations - the distance redshift relations measured using a variety of techniques such as Supernovae of Type Ia, Baryon acoustic oscillations, the cosmic microwave background, the growth of large scale structure measured using the clustering of galaxies, the growth of galaxy clusters through cosmic time and the mapping of matter in the Universe via gravitational lensing. Each of these observations are helping us to piece together the puzzle of the
+Universe.</p>
+<p>We will touch upon these subjects in the course.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Preface.html" class="btn btn-neutral float-left" title="Preface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Cosmological_principle.html" class="btn btn-neutral float-right" title="Cosmological principle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Surhud More.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
